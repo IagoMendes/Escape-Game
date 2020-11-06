@@ -1,8 +1,6 @@
-# 3DGameProject (Jogo em desenvolvimento)
+# Escape
 
-Jogo sem nome definido.
-
-Link para o jogo:
+Link para o jogo: https://iagomendes.itch.io/escape
 
 # Identidade do jogo (Conceito)
 O jogador se encontra preso dentro de um labirinto, e seu objetivo é encontrar a saída e não deixar os monstros matarem ele.
@@ -21,7 +19,7 @@ Para controlar personagem, o jogador deve utilizar as teclas wasd para andar, es
 
 
 # Trilha Sonora
-Ainda não definida.
+Utilizada para aprofundar o ambiente do jogo, causando mais tensão ao jogador
 
 
 # Dificuldade
@@ -29,7 +27,7 @@ Os labirintos (fases) do jogo vão ficando cada vez mais difíceis, com monstros
 
 
 # Fluxo do jogo 
-O jogador aprende a se movimentar, atirar e se esconder dos inimigos. Ao acabar o tutorial, se encontra em uma sala fechada e um minimapa. Com esses, o jogador deve prosseguir pelo labirinto.
+O jogador aprende a se movimentar, atirar e passar pelos inimigos. Ao acabar o tutorial, se encontra em uma sala fechada e um minimapa. Com esses, o jogador deve prosseguir pelo labirinto.
 
 O jogador tem 150 de vida e 10 balas. Ele pode encontrar mais vidas e balas pelo caminho.
 
