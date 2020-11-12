@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
         Scene activeScene = SceneManager.GetActiveScene();
         if (activeScene.name == "Menu")
         {
+            PlayerPrefs.SetInt("Lives", 3);
+            PlayerPrefs.SetInt("Bullets", 15);
             Cursor.lockState = CursorLockMode.Locked;
             SceneManager.LoadScene("Game01");
         }
@@ -20,12 +22,6 @@ public class GameManager : MonoBehaviour
         {
             SceneManager.LoadScene("EndGame");
         }
-    }
-
-    public void RestartLevel()
-    {
-        Scene activeScene = SceneManager.GetActiveScene();
-        SceneManager.LoadScene(activeScene.name);
     }
 
     public void EndGame()

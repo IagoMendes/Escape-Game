@@ -24,9 +24,12 @@ public class Gun : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        int bullets = PlayerPrefs.GetInt("Bullets");
 
-        if (timer > wait && Input.GetButtonDown("Fire1"))
+        if ((timer > wait) && Input.GetButtonDown("Fire1") && (bullets > 0))
         {
+            PlayerPrefs.SetInt("Bullets", --bullets);
+
             timer = 0;
 
             flash.Play();

@@ -87,6 +87,7 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
     }
 
+    //Mudar para fazer o player tomar dano
     void KillPlayer()
     {
         gameManager.Died();
