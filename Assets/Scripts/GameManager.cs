@@ -24,6 +24,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void DamagePlayer()
+    {
+        int lives = PlayerPrefs.GetInt("Lives") - 1;
+        PlayerPrefs.SetInt("Lives", lives);
+
+        if (lives <= 0) 
+        {
+            Died();
+        }
+    }
+
     public void EndGame()
     {
         Cursor.lockState = CursorLockMode.Confined;

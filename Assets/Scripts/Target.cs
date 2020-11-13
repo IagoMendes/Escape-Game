@@ -16,6 +16,8 @@ public class Target : MonoBehaviour
 
     float time = 16;
     float wait = 16;
+    float attackTime = 2;
+    float attackWait = 2;
 
     void Start()
     {
@@ -26,8 +28,10 @@ public class Target : MonoBehaviour
 
     void Update()
     {
-        time += Time.deltaTime;
-        
+        float timerAdd = Time.deltaTime;
+        time += timerAdd;
+        attackTime += timerAdd;
+
         if (Vector3.Distance(player.transform.position, transform.position) < 8f && dead == false)
         {
             if (time > wait)
@@ -45,8 +49,12 @@ public class Target : MonoBehaviour
 
             if (Vector3.Distance(player.transform.position, transform.position) < 1f)
             {
-                animator.SetBool("attack", true);
-                Invoke("KillPlayer", 2f);
+                if (attackTime > attackWait)
+                {
+                    attackTime = 0;
+                    animator.SetBool("attack", true);
+                    Invoke("AttackPlayer", 1.5f);
+                }
             }
             else
             {
@@ -87,10 +95,9 @@ public class Target : MonoBehaviour
         Destroy(gameObject);
     }
 
-    //Mudar para fazer o player tomar dano
-    void KillPlayer()
+    void AttackPlayer()
     {
-        gameManager.Died();
+        gameManager.DamagePlayer();
     }
 
 }
