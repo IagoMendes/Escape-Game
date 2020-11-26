@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public void NextStage()
     {
         Scene activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == "Menu")
+        if (activeScene.name == "Menu" )
         {
             PlayerPrefs.SetInt("Lives", 3);
             PlayerPrefs.SetInt("Bullets", 15);
@@ -21,6 +21,16 @@ public class GameManager : MonoBehaviour
         else
         {
             SceneManager.LoadScene("EndGame");
+        }
+    }
+    private void Start()
+    {
+        Scene activeScene = SceneManager.GetActiveScene();
+        if (activeScene.name == "Game01")
+        {
+            PlayerPrefs.SetInt("Lives", 3);
+            PlayerPrefs.SetInt("Bullets", 15);
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 

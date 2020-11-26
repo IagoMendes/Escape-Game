@@ -18,6 +18,7 @@ public class Target : MonoBehaviour
     float wait = 16;
     float attackTime = 2;
     float attackWait = 2;
+    //[SerializeField] float destroyTimer = 3.0f;
 
     void Start()
     {
@@ -98,6 +99,15 @@ public class Target : MonoBehaviour
     void AttackPlayer()
     {
         gameManager.DamagePlayer();
+        Register();
     }
+    void Register()
+    {
 
+            DI_System.CreateIndicator(this.transform);
+            Debug.Log("INDICATOR CREATED");
+
+
+        //Destroy(this.gameObject, destroyTimer);
+    }
 }

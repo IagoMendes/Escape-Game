@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Target
   - Exit
+  - Ammo
+  - Life
   layers:
   - Default
   - TransparentFX
