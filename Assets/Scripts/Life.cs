@@ -5,6 +5,12 @@ using UnityEngine;
 public class Life : MonoBehaviour
 {
     int qnt;
+    AudioSource sound;
+
+    void Start()
+    {
+        sound = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -20,8 +26,14 @@ public class Life : MonoBehaviour
             if (qnt < 3)
             {
                 PlayerPrefs.SetInt("Lives", qnt + 1);
-                Destroy(gameObject);
             }
+            sound.Play();
+            Invoke("Inactive", 0.75f);
         }
+    }
+
+    private void Inactive()
+    {
+        gameObject.SetActive(false);
     }
 }

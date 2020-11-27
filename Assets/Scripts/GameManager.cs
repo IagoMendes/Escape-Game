@@ -11,25 +11,30 @@ public class GameManager : MonoBehaviour
     public void NextStage()
     {
         Scene activeScene = SceneManager.GetActiveScene();
-        if (activeScene.name == "Menu" )
+        if (activeScene.name == "Menu")
         {
             PlayerPrefs.SetInt("Lives", 3);
             PlayerPrefs.SetInt("Bullets", 15);
             Cursor.lockState = CursorLockMode.Locked;
             SceneManager.LoadScene("Game01");
         }
+        else if (activeScene.name == "Game01") {
+            SceneManager.LoadScene("Game02");
+        }
         else
         {
+            Cursor.lockState = CursorLockMode.Confined;
             SceneManager.LoadScene("EndGame");
         }
     }
+
     private void Start()
     {
         Scene activeScene = SceneManager.GetActiveScene();
         if (activeScene.name == "Game01")
         {
             PlayerPrefs.SetInt("Lives", 3);
-            PlayerPrefs.SetInt("Bullets", 15);
+            PlayerPrefs.SetInt("Bullets", 0);
             Cursor.lockState = CursorLockMode.Locked;
         }
     }

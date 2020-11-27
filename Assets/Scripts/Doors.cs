@@ -8,6 +8,6 @@ public class Doors : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        gameManager.EndGame();
+        gameManager.NextStage();
     }
 }

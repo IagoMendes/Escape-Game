@@ -11,6 +11,6 @@ public class BulletsUI : MonoBehaviour
     void Update()
     {
         float bullets = PlayerPrefs.GetInt("Bullets");
-        gameObject.GetComponent<Text>().text = "Bullets " + bullets.ToString() + "/15";
+        gameObject.GetComponent<Text>().text = bullets.ToString(); // + "/15";
     }
 }

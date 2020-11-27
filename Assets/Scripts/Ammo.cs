@@ -5,6 +5,12 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     int qnt;
+    AudioSource sound;
+
+    void Start()
+    {
+        sound = GetComponent<AudioSource>();    
+    }
 
     // Update is called once per frame
     void Update()
@@ -22,14 +28,19 @@ public class Ammo : MonoBehaviour
                 if (qnt >= 10)
                 {
                     PlayerPrefs.SetInt("Bullets", 15);
-                    Destroy(gameObject);
                 }
                 else
                 {
                     PlayerPrefs.SetInt("Bullets", qnt + 5);
-                    Destroy(gameObject);
                 }
+                sound.Play();
+                Invoke("Inactive", 1.5f);
             }
         }
+    }
+
+    private void Inactive()
+    {
+        gameObject.SetActive(false);
     }
 }
